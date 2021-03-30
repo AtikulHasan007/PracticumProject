@@ -1,0 +1,52 @@
+<?php
+
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BikeController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\ServiceController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+Route::prefix('admin')->name('admin.')->group(function (){
+    Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
+
+    Route::prefix('/bike')->name('bike.')->group(function(){
+        Route::get('/list',[BikeController::class,'bikes'])->name('list');
+        Route::post('/create',[BikeController::class,'create'])->name('create');
+        
+
+    });
+
+    Route::prefix('/customer')->name('customer.')->group(function(){
+        Route::get('/list',[CustomerController::class,'index'])->name('list');
+        Route::post('/create',[CustomerController::class,'create'])->name('create');
+    });
+
+    Route::prefix('/service')->name('service.')->group(function(){
+        Route::get('/list',[ServiceController::class,'index'])->name('list');
+        Route::post('/create',[ServiceController::class,'create'])->name('create');
+
+    });
+
+    Route::get('/category/list',[CategoryController::class,'index'])->name('category.list');
+    Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
+    Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
+
+
+});
