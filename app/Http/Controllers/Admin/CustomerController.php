@@ -14,14 +14,23 @@ class CustomerController extends Controller
     }
     public function create(Request $request)
     {
-        //dd($request->all());
+        $filename= "";
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+
+            if($file->isValid()){
+                $filename = date('Ymdhms').'.'.$file->getClientOriginalExtension();
+                $file->storeAs('customer',$filename);
+            }
+        }
         Customer::create([
+            'image'=> $filename,
             'name'=> $request->name,
             'email'=> $request->email,
             'sex'=> $request->sex,
             'age'=> $request->age,
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Customer data inserted successfully');
     }
 }

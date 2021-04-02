@@ -13,10 +13,17 @@ Customers-List
 </button>
 
     <h1 class="text-center py-3">Customers List</h1>
+    @if(session('success'))
+    <div class="alert alert-success text-center">
+    <p class="text-success">{{ session('success')}}</p>
+    </div>
+
+    @endif
     <table class="table">
   <thead>
     <tr>
       <th scope="col">Sl</th>
+      <th scope="col">Customer Image</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Sex</th>
@@ -29,6 +36,7 @@ Customers-List
   @foreach($values as $data)
     <tr>
       <th scope="row">{{ $data->id}}</th>
+      <td><img  width="80px" src="{{url('uploads/customer/'.$data->image)}}" alt=""></td>
       <td>{{ $data->name}}</td>
       <td>{{ $data->email}}</td>
       <td>{{ $data->sex}}</td>
@@ -58,10 +66,15 @@ Customers-List
           <span aria-hidden="true">&times;</span>
         </button>
       </div> 
-      <form action="{{route('admin.customer.create')}}" method="post">
+      <form action="{{route('admin.customer.create')}}" method="post" enctype="multipart/form-data">
       @csrf
       <div class="modal-body">
      
+  <div class="form-group">
+    <label for="image">Customer Image</label>
+    <input type="file" class="form-control" id="image" name="image">
+ 
+  </div>
   <div class="form-group">
     <label for="name"> Name</label>
     <input type="text" class="form-control" id="name" name="name"  placeholder="Enter name">

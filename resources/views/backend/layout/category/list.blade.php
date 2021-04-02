@@ -8,7 +8,7 @@
 <div class="row">
 <div class="col-md-12">
     <h1 class="text-center py-3"> Category List </h1>
-    <a  class="btn btn-primary my-3 " href="{{route('admin.category.create')}}">Add New Category</a>
+    <a  class="btn btn-primary my-3 " href="{{route('admin.category.create')}}"> Add New Category</a>
 
     <table class="table table-striped table-bordered">
   <thead>
@@ -20,9 +20,9 @@
     </tr>
   </thead>
   <tbody>
-  @foreach($categories as $category)
+  @foreach($categories as $key=>$category)
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{$key+1}}</th>
       <td>{{$category->name}}</td>
       <td>{{$category->description}}</td>
       <td class="text-center">

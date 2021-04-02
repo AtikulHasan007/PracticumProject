@@ -4,7 +4,9 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BikeController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,5 +50,8 @@ Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
     Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
 
+    Route::get('/product/list',[ProductController::class,'index'])->name('product.list');
+    Route::get('/product/create',[ProductController::class,'create'])->name('product.create');
+    Route::post('/product/store',[ProductController::class,'store'])->name('product.store');
 
 });
