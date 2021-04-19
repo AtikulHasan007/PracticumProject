@@ -15,11 +15,16 @@ class CreateBikesTable extends Migration
     {
         Schema::create('bikes', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
             $table->string('brand');
             $table->string('model');
-            $table->string('cc');
             $table->integer('year');
-            $table->timestamps();
+            $table->string('cc');
+            $table->string('type');
+            $table->string('engine_no');
+            $table->date('date');
+            $table->string('total_service');
+            $table->data();
         });
     }
 

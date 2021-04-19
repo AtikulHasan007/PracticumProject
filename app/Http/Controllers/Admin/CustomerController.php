@@ -27,8 +27,10 @@ class CustomerController extends Controller
             'image'=> $filename,
             'name'=> $request->name,
             'email'=> $request->email,
-            'sex'=> $request->sex,
-            'age'=> $request->age,
+            'contact'=> $request->contact,
+            'address'=> $request->address,
+            'password'=> $request->password,
+            'nid'=> $request->nid,
         ]);
 
         return redirect()->back()->with('success','Customer data inserted successfully');

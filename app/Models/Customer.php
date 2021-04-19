@@ -12,7 +12,9 @@ class Customer extends Model
         'image',
         'name',
         'email',
-        'sex',
-        'age',
+        'contact',
+        'address',
+        'nid',
+        'password'
     ];
 }

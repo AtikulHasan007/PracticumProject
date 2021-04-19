@@ -15,7 +15,7 @@ Admin-Dashboard
                               <h1 class="count">
                                   0
                               </h1>
-                              <p>New Users</p>
+                              <p>Total Customers</p>
                           </div>
                       </section>
                   </div>
@@ -28,7 +28,7 @@ Admin-Dashboard
                               <h1 class=" count2">
                                   0
                               </h1>
-                              <p>Sales</p>
+                              <p>Authorized Bikes</p>
                           </div>
                       </section>
                   </div>
@@ -41,7 +41,7 @@ Admin-Dashboard
                               <h1 class=" count3">
                                   0
                               </h1>
-                              <p>New Order</p>
+                              <p>Booking Requests</p>
                           </div>
                       </section>
                   </div>
@@ -54,7 +54,7 @@ Admin-Dashboard
                               <h1 class=" count4">
                                   0
                               </h1>
-                              <p>Total Profit</p>
+                              <p> Running Services</p>
                           </div>
                       </section>
                   </div>

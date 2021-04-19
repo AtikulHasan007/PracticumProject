@@ -26,9 +26,11 @@ Customers-List
       <th scope="col">Customer Image</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
-      <th scope="col">Sex</th>
-      <th scope="col">age </th>
-      <th scope="col">Action</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Address</th>
+      <th scope="col">Password </th>
+      <th scope="col">NID Number</th>
+  
 
     </tr>
   </thead>
@@ -39,8 +41,10 @@ Customers-List
       <td><img  width="80px" src="{{url('uploads/customer/'.$data->image)}}" alt=""></td>
       <td>{{ $data->name}}</td>
       <td>{{ $data->email}}</td>
-      <td>{{ $data->sex}}</td>
-      <td>{{ $data->age}}</td>
+      <td>{{ $data->contact}}</td>
+      <td>{{ $data->address}}</td>
+      <td>{{ $data->password}}</td>
+      <td>{{ $data->nid}}</td>
       <td> 
       <a href="#" class="btn btn-primary btn-sm">view</a>
       <a href="#" class="btn btn-success btn-sm">edit</a>
@@ -85,12 +89,20 @@ Customers-List
     <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
   </div>
   <div class="form-group">
-    <label for="sex">Sex</label>
-    <input type="text" class="form-control" id="sex" name="sex" placeholder="Enter">
+    <label for="contact">Contact Number</label>
+    <input type="number" class="form-control" id="contact" name="contact" placeholder="Enter contact number">
   </div>
   <div class="form-group">
-    <label for="age"> Age </label>
-    <input type="integer" class="form-control" id="age" name="age" placeholder="Enter Your Age">
+    <label for="address">Address</label>
+    <input type="text" class="form-control" id="address" name="address" placeholder="Enter customer address">
+  </div>
+  <div class="form-group">
+    <label for="sex">Password</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Enter the password">
+  </div>
+  <div class="form-group">
+    <label for="nid"> NID Number </label>
+    <input type="number" class="form-control" id="nid" name="nid" placeholder="Enter Your NID number">
   </div>
   
   

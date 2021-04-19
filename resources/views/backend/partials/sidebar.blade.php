@@ -88,6 +88,17 @@
                           <li><a  href="inbox_details.html">Inbox Details</a></li>
                       </ul>
                   </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="{{request()-> is('admin/employee/list') ? 'active' : ''}}" >
+                          <i class=" fa fa-envelope"></i>
+                          <span> Employee </span>
+                      </a>
+                      <ul class="sub">
+                          <li class="{{request()->is('admin/employee/list') ? 'active' : ''}}"><a  href="{{route('admin.employee.list')}}">Employee List </a></li>
+                          <li><a  href="inbox_details.html"> Add Employee</a></li>
+                      </ul>
+                  </li>
            
            
                      
