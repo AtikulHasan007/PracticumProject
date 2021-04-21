@@ -7,6 +7,10 @@ use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Frontend\ServiceController as FrontServiceController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Frontend\UserController as FrontUserController;
+use App\Http\Controllers\Frontend\SiteController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -21,18 +25,44 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-}); 
+Route::prefix('/')->name('motors.')->group(function(){
+    Route::get('/registration-form',[FrontUserController::class,'ShowRegisterFrom'])->name('registrationform');
+    Route::post('/registration',[FrontUserController::class,'Registration'])->name('registration');
+
+    Route::get('/login-form',[FrontUserController::class,'loginFrom'])->name('loginform');
+    Route::post('/login',[FrontUserController::class,'login'])->name('login');
+
+    
+    Route::group(['middleware'=> 'user-auth'],function(){
+
+    Route::get('/logout',[FrontUserController::class,'logout'])->name('logout');
+    Route::get('/',[SiteController::class,'home'])->name('home');
+    Route::get('/about',[SiteController::class,'about'])->name('about');
+    Route::get('/our-service',[FrontServiceController::class,'service'])->name('service');
+
+});
+});
 
 
 Route::prefix('admin')->name('admin.')->group(function (){
-    Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
+
+    Route::get('/login',[UserController::class,'loginForm'])->name('loginForm');
+    Route::post('/doLogin',[UserController::class,'doLogin'])->name('doLogin');
+
+ //after 6th stste, it is the a1
+    Route::group(['middleware'=> 'admin-auth'],function(){
+
+        Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
+    Route::get('/logout',[UserController::class,'logout'])->name('logout');
+
 
     Route::prefix('/bike')->name('bike.')->group(function(){
         Route::get('/list',[BikeController::class,'index'])->name('list');
         Route::get('/create',[BikeController::class,'create'])->name('create');
         Route::post('/store',[BikeController::class,'store'])->name('store');
+        Route::get('/view/{id}',[BikeController::class,'view'])->name('view');
+        Route::get('/edit/{id}',[BikeController::class,'edit'])->name('edit');
+        Route::put('/update/{id}',[BikeController::class,'update'])->name('update');
         Route::delete('/delete/{id}',[BikeController::class,'delete'])->name('delete');
         
 
@@ -61,4 +91,9 @@ Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('/employee/create',[EmployeeController::class,'create'])->name('employee.create');
     Route::post('employee/store',[EmployeeController::class,'store'])->name('employee.store');
 
+
+
+    });
+
+    
 });

@@ -221,7 +221,7 @@
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <img alt="" src="img/avatar1_small.jpg">
-                            <span class="username">Jhon Doue</span>
+                            <span class="username"></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout dropdown-menu-right">
@@ -229,12 +229,10 @@
                             <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
                             <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
-                            <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                            <li><a href="{{ route('admin.logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
                         </ul>
                     </li>
-                    <li class="sb-toggle-right">
-                        <i class="fa  fa-align-right"></i>
-                    </li>
+                    
                     <!-- user login dropdown end -->
                 </ul>
                 <!--search & user info end-->

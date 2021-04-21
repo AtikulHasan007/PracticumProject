@@ -54,14 +54,14 @@ Bike-List
       <td>  {{$b->engine_no}} </td>
       <td>  {{$b->date}} </td>
       <td>  {{$b->total_service}} </td>
-      <td>
-        <a class="btn btn-primary" href="#">View</a>
-        <a  class="btn btn-success" href="#">Edit</a>
+      <td class="d-flex">
+        <a class="btn btn-primary btn-sm m-1" href="{{ route('admin.bike.view',$b->id)}}">View</a>
+        <a  class="btn btn-success btn-sm m-1" href="{{route('admin.bike.edit', $b->id)}}">Edit</a>
 
-        <form action="{{ route('admin.bike.delete',$b->id)}}" method="post" class="d-inline">
+        <form action="{{ route('admin.bike.delete',$b->id)}}" method="post" >
         @csrf
         @method('DELETE')
-        <button type="submit" class="btn btn-danger ">Delete</button>
+        <button type="submit" class="btn btn-danger btn-sm m-1 ">Delete</button>
         
         </form>
       </td>

@@ -24,7 +24,7 @@ class CreateBikesTable extends Migration
             $table->string('engine_no');
             $table->date('date');
             $table->string('total_service');
-            $table->data();
+            $table->timestamps();
         });
     }
 
