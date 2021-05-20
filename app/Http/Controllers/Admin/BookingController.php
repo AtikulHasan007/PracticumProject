@@ -10,7 +10,21 @@ class BookingController extends Controller
 {
     public function index(){
         $book= Booking::all();
-        return view('backend.layout.booking.list',compact('book'));
+
+    $fromDate = null;
+    $toDate = null;
+
+    if(isset($_GET['from_date']) && isset($_GET['to_date'])){
+    $fromDate = $_GET['from_date'];
+    $toDate = $_GET['to_date'];
+
+    //For one date
+    //$bookings = Booking::whereDate('from_date',$fromDate)->get();
+
+    //For range date
+    $book = Booking::whereBetween('date',[$fromDate,$toDate])->get();
+     }
+        return view('backend.layout.booking.list',compact('book','fromDate','toDate'));
     }
 
     public function edit($id){

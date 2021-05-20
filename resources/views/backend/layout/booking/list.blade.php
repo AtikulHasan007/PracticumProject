@@ -29,6 +29,42 @@
 
                 @endif
                 <div class="adv-table">
+
+                    <aside class="col-lg-12">
+                        <section class="card bg-light">
+                            <div class="card-body">
+                                <form action="{{ route('admin.booking.list') }}" method="GET">
+                                <div class="row ">
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label for="from">From Date</label>
+                                            <input type="date" value="{{ $fromDate }}" name="from_date" id="from" class="form-control">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label for="to_date"> To Date</label>
+                                            <input type="date" value="{{ $fromDate}}" name="to_date" id="to_date" class="form-control">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-4 my-4 pl-sm-0 ">
+                                        <div class="form-group text-center p">
+                                            <button type="submit" class="btn btn-outline-primary">Search</button>
+                                  <!--          <button type="button" onclick="printDiv()" class="btn btn-outline-success">Print</button> -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+
+                            </div>
+                        </section>
+                    </aside>
+
                     <table  class="display table table-bordered table-striped" id="dynamic-table">
                         <thead>
                             <tr>
@@ -44,6 +80,7 @@
                                 <th class="hidden-phone">Action</th>
                             </tr>
                         </thead>
+                        @if(count($book)> 0)
                         @foreach($book as $b)
                         <tbody>
 
@@ -90,6 +127,9 @@
                             </tr>
                         </tbody>
                             @endforeach
+                            @else
+
+                            @endif
                     </table>
                 </div>
             </div>

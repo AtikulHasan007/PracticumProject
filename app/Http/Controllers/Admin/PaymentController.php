@@ -74,4 +74,26 @@ class PaymentController extends Controller
         return \redirect()->route('admin.payment.show',$booking->id);
 
     }
+
+        //Payment Report Part
+
+        public function report(){
+
+            $payments = Payment::all();
+    $fromDate = null;
+    $toDate = null;
+
+    if(isset($_GET['from_date']) && isset($_GET['to_date'])){
+    $fromDate = $_GET['from_date'];
+    $toDate = $_GET['to_date'];
+
+    //For one date
+    //$bookings = Booking::whereDate('from_date',$fromDate)->get();
+
+    //For range date
+    $payments = Payment::whereBetween('pay_date',[$fromDate,$toDate])->get();
+     }
+            return view('backend.layout.payment.report',compact('payments','fromDate','toDate'));
+        }
+
 }

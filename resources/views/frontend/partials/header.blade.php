@@ -1,4 +1,30 @@
 
+
+<div class="top-header-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <ul class="top-header-information">
+                    <li>
+                        <i class="flaticon-pin"></i>
+                        Old Bus Stand, Tangail Sadar, Tangail
+                    </li>
+                    <li>
+                        <i class="flaticon-clock"></i>
+                        Saturday to Thursday 9:00 AM - 10:00 PM
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <ul class="top-header-optional">
+                    <li>The Service Part of <b> MONDOL MOTORS</b></li>
+                    <li>Currency: <b>BDT</b></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="middle-header-area">
         <div class="container">
             <div class="row align-items-center">

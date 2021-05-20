@@ -52,6 +52,14 @@
                       </ul>
                   </li>
 
+                  <li class="sub-menu">
+                    <a href="{{route('admin.payment.report')}}" >
+                        <i class="fa fa-laptop"></i>
+                        <span  >Payments report </span>
+                    </a>
+
+                </li>
+
 
 
 

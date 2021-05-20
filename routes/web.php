@@ -105,6 +105,9 @@ Route::prefix('admin')->name('admin.')->group(function (){
         Route::get('/show/{id}',[PaymentController::class,'paymentShow'])->name('show');
         Route::get('/form/{id}',[PaymentController::class,'paymentForm'])->name('form');
         Route::post('/create',[PaymentController::class,'paymentCreate'])->name('create');
+        //payment report
+
+        Route::get('/report',[PaymentController::class,'report'])->name('report');
 
     });
 
@@ -126,6 +129,7 @@ Route::prefix('admin')->name('admin.')->group(function (){
         Route::delete('/delete/{id}',[ServiceController::class,'delete'])->name('delete');
 
     });
+
 
 
     });
