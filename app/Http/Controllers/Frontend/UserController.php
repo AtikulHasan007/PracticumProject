@@ -15,11 +15,14 @@ class UserController extends Controller
 
     public function Registration(Request $request){
         $request->validate([
+            'image' => 'required|image',
             'name' => 'required',
             'email' => 'required|unique:users',
-            'password' => 'required',
+            'contact' => 'required',
+            'address' => 'required',
+            'password' => 'required|confirmed',
             'nid' => 'required',
-            
+
         ]);
 
 
@@ -29,21 +32,23 @@ class UserController extends Controller
 
             if($file->isValid()){
                 $filename = date('Ymdhms').'.'.$file->getClientOriginalExtension();
-                $file->storeAs('Users',$filename);
+                $file->storeAs('users',$filename);
             }
         }
-        
+
         User::create([
             'image'=> $filename,
             'name'=> $request->name,
             'email'=> $request->email,
+            'contact'=> $request->contact,
+            'address'=> $request->address,
             'nid'=> $request->nid,
             'password'=> bcrypt($request->password),
         ]);
 
         return redirect()->back()->with('success','Registration Successfull');
 
-      
+
     }
 
 
@@ -56,24 +61,24 @@ class UserController extends Controller
 
     public function login(Request $request){
         $request->validate([
-            
+
             'email' => 'required',
             'password' => 'required',
 
-            
+
         ]);
 
         $loginData = $request->only('email','password');
 
         if(Auth::attempt($loginData)){
             $request->session()->regenerate();
-            return redirect()->route('motors.home');
+            return redirect()->intended(route('motors.home'));
         }else{
             session()->flash('type','danger');
             session()->flash('message','These Credentails do not match');
             return \redirect()->back();
         }
-      
+
     }
 
     public function logout(){

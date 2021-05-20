@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 class SiteController extends Controller
 {
     public function home(){
-        return view('frontend.layouts.home');
+        return view('frontend.layout.home');
     }
     
     public function about(){
-        return view('frontend.layouts.about');
+        return view('frontend.layout.about');
     }
     
 }

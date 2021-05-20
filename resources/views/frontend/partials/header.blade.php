@@ -1,4 +1,4 @@
-  
+
     <div class="middle-header-area">
         <div class="container">
             <div class="row align-items-center">
@@ -26,14 +26,16 @@
                             <a href="wishlist.html"><i class="flaticon-heart"><span>0</span></i> Wishlist</a>
                         </li>
                         <li>
-                            <a href="{{route('motors.loginform')}}" class="user-btn"><i class='flaticon-enter'></i>Login </a>
-                            
-                        </li>
-                        <li>
-                            <a href="{{route('motors.registrationform')}}" class="user-btn"><i class='flaticon-enter'></i>Register</a>
-                            
-                        </li>
-                       
+
+                        <a href="{{route('motors.loginform')}}" class="user-btn"><i class='flaticon-enter'></i>Login </a>
+
+                    </li>
+                    <li>
+                        <a href="{{route('motors.registrationform')}}" class="user-btn"><i class='flaticon-enter'></i>Register</a>
+
+                    </li>
+
+
                     </ul>
                 </div>
             </div>
@@ -100,12 +102,12 @@
 								</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item">
-										<a href="index.html" class="nav-link">
+										<a href="{{ route('motors.user.profile') }}" class="nav-link">
 											{{auth()->user()->name}}
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="index-2.html" class="nav-link active">
+										<a href="{{ route('motors.user.profile') }}" class="nav-link active">
 											Profile
 										</a>
 									</li>
@@ -117,12 +119,12 @@
 								</ul>
 							</li>
                             @endauth
-                           
+
                         </ul>
-                      
+
                     </div>
                 </nav>
-                
+
             </div>
         </div>
         <div class="others-option-for-responsive">

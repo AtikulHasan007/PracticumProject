@@ -4,13 +4,14 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bike;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
     //b1
     public function service(){
-        $bikes = Bike::all();
-        return view('frontend.layouts.service',compact('bikes'));
+        $service = Service::all();
+        return view('frontend.layout.service',compact('service'));
     }
 }

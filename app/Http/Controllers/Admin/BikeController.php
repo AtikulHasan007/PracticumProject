@@ -12,8 +12,8 @@ class BikeController extends Controller
         $bikes= Bike::paginate(5);
         return view('backend.layout.bike.bikelist',compact('bikes'));
 
-    }
-
+    } 
+ 
     public function create(){
         return view('backend.layout.bike.create');
     }
@@ -31,7 +31,7 @@ class BikeController extends Controller
             'engine_no' => 'required|min:2|max:10',
             'date' => 'required',
             'total_service' => 'required|min:1|max:2',
-
+ 
         ]);
         
 

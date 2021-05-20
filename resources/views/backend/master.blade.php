@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="img/favicon.html">
 
     <title>     @yield('title')    </title>
-
+    <script src="https://kit.fontawesome.com/c4f7856497.js" crossorigin="anonymous"></script>
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('admin/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('admin/css/bootstrap-reset.css')}}" rel="stylesheet">
@@ -21,8 +21,12 @@
     <!--right slidebar-->
     <link href="{{asset('admin/css/slidebars.css')}}" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!--dynamic table-->
+    <link href="{{asset('admin/assets/advanced-datatable/media/css/demo_page.css')}}" rel="stylesheet" />
+    <link href="{{asset('admin/assets/advanced-datatable/media/css/demo_table.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('admin/assets/data-tables/DT_bootstrap.css')}}" />
 
+    <!-- Custom styles for this template -->
     <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('admin/css/style-responsive.css')}}" rel="stylesheet" />
 
@@ -84,29 +88,32 @@
       <!--footer end-->
   </section>
 
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="{{asset('admin/js/jquery.js')}}"></script>
-    <script src="{{asset('admin/js/bootstrap.bundle.min.js')}}"></script>
-    <script class="include" type="text/javascript" src="{{asset('admin/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-    <script src="{{asset('admin/js/jquery.scrollTo.min.j')}}s"></script>
-    <script src="{{asset('admin/js/jquery.nicescroll.js')}}" type="text/javascript"></script>
-    <script src="{{asset('admin/js/jquery.sparkline.js')}}" type="text/javascript"></script>
-    <script src="{{asset('admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js')}}"></script>
-    <script src="{{asset('admin/js/owl.carousel.js')}}" ></script>
-    <script src="{{asset('admin/js/jquery.customSelect.min.js')}}" ></script>
-    <script src="{{asset('admin/js/respond.min.js')}}" ></script>
+   <!-- js placed at the end of the document so the pages load faster -->
+   <script src="{{ asset('admin/js/jquery.js') }}"></script>
+   <script src="{{ asset('admin/js/bootstrap.bundle.min.js') }}"></script>
+   <script class="include" type="text/javascript" src="{{ asset('admin/js/jquery.dcjqaccordion.2.7.js') }}"></script>
+   <script src="{{ asset('admin/js/jquery.scrollTo.min.js') }}"></script>
+   <script src="{{ asset('admin/js/jquery.nicescroll.js') }}" type="text/javascript"></script>
+   <script src="{{ asset('admin/js/jquery.sparkline.js') }}" type="text/javascript"></script>
+   <script src="{{ asset('admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js') }}"></script>
+   <script src="{{ asset('admin/js/owl.carousel.js') }}" ></script>
+   <script type="text/javascript" language="javascript" src="{{ asset('admin/assets/advanced-datatable/media/js/jquery.dataTables.js') }}"></script>
+   <script src="{{ asset('admin/js/jquery.customSelect.min.js') }}" ></script>
+   <script src="{{ asset('admin/js/respond.min.js') }}" ></script>
+   <script type="text/javascript" src="{{ asset('admin/assets/data-tables/DT_bootstrap.js') }}"></script>
 
-    <!--right slidebar-->
-    <script src="{{asset('admin/js/slidebars.min.js')}}"></script>
+   <!--right slidebar-->
+   <script src="{{ asset('admin/js/slidebars.min.js') }}"></script>
 
-    <!--common script for all pages-->
-    <script src="{{asset('admin/js/common-scripts5e1f.js?v=2')}}"></script>
+   <!--common script for all pages-->
+   <script src="{{ asset('admin/js/common-scripts5e1f.js?v=2') }}"></script>
+   <script src="{{ asset('admin/js/deleteAlert.js') }}"></script>
+   <script src="{{ asset('admin/js/dynamic_table_init.js') }}"></script>
 
-    <!--script for this page-->
-    <script src="{{asset('admin/js/sparkline-chart.js')}}"></script>
-    <script src="{{asset('admin/js/easy-pie-chart.js')}}"></script>
-    <script src="{{asset('admin/js/count.js')}}"></script>
-
+   <!--script for this page-->
+   <script src="{{ asset('admin/js/sparkline-chart.js') }}"></script>
+   <script src="{{ asset('admin/js/easy-pie-chart.js') }}"></script>
+   <script src="{{ asset('admin/js/count.js') }}"></script>
   <script>
 
       //owl carousel

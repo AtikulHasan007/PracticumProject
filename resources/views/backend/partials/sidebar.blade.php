@@ -9,15 +9,11 @@
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a href="{{route('admin.booking.list')}}" >
                           <i class="fa fa-laptop"></i>
-                          <span>Layouts</span>
+                          <span  >Bookings </span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="boxed_page.html">Bookings List</a></li>
-                          <li><a  href="horizontal_menu.html">Requests</a></li>
-                          
-                      </ul>
+
                   </li>
 
                   <li class="sub-menu">
@@ -28,7 +24,7 @@
                       <ul class="sub">
                           <li class="{{request()->is('admin/customer/list') ? 'active' : ''}}"><a  href="{{route('admin.customer.list')}}">Customers List</a></li>
                           <li><a  href="#l">Add New Customer</a></li>
-                        
+
                       </ul>
                   </li>
 
@@ -40,8 +36,8 @@
                       <ul class="sub">
                           <li class="{{request()->is('admin/bike/list') ? 'active' : ''}}"><a  href="{{route('admin.bike.list')}}">Bike List</a></li>
                           <li><a  href="#">Add Bike</a></li>
-                          
-                          
+
+
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -51,61 +47,22 @@
                       </a>
                       <ul class="sub">
                           <li   class="{{request()->is('admin/service/list') ? 'active' : ''}}"><a  href="{{route('admin.service.list')}}">Service</a></li>
-                          <li><a  href="#">Add Service List</a></li>
-                  
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-th"></i>
-                          <span>Bills </span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
-                          <li><a  href="dynamic_table.html">Dynamic Table</a></li>
-                          <li><a  href="editable_table.html">Editable Table</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="{{request()->is('admin/product/list') ? 'active' : ''}}" >
-                          <i class=" fa fa-envelope"></i>
-                          <span> Product </span>
-                      </a>
-                      <ul class="sub">
-                          <li class="{{request()->is('admin/product/list') ? 'active' : ''}}"><a  href="{{route('admin.product.list')}}"> Product List </a></li> 
-                          <li><a  href="inbox_details.html">Inbox Details</a></li>
+                          <li><a  href="{{route('admin.service.create')}}">Add Service  </a></li>
+
                       </ul>
                   </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="{{request()-> is('admin/category/list') ? 'active' : ''}}" >
-                          <i class=" fa fa-envelope"></i>
-                          <span> Category </span>
-                      </a>
-                      <ul class="sub">
-                          <li class="{{request()->is('admin/category/list') ? 'active' : ''}}"><a  href="{{route('admin.category.list')}}">Category List </a></li>
-                          <li><a  href="inbox_details.html">Inbox Details</a></li>
-                      </ul>
-                  </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="{{request()-> is('admin/employee/list') ? 'active' : ''}}" >
-                          <i class=" fa fa-envelope"></i>
-                          <span> Employee </span>
-                      </a>
-                      <ul class="sub">
-                          <li class="{{request()->is('admin/employee/list') ? 'active' : ''}}"><a  href="{{route('admin.employee.list')}}">Employee List </a></li>
-                          <li><a  href="inbox_details.html"> Add Employee</a></li>
-                      </ul>
-                  </li>
-           
-           
-                     
-               
+
+
+
+
+
+
+
 
                   <!--multi level menu start-->
-                  
+
                   <!--multi level menu end-->
 
               </ul>

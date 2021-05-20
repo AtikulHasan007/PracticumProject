@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src="https://kit.fontawesome.com/c4f7856497.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css')}}">
 
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.min.css')}}">
@@ -49,7 +49,7 @@
 @include('frontend.partials.footer')
 
 
-    
+
 
     <div class="go-top">
         <i class='bx bx-up-arrow-alt'></i>
@@ -60,12 +60,12 @@
 
 </div>
 
-    
 
 
 
 
-  
+
+
 
     <script data-cfasync="false" src="{{ asset('frontend/assets/js/email-decode.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/js/jquery.min.js')}}"></script>
