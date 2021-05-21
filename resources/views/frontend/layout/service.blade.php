@@ -20,7 +20,7 @@
 
 
 	<section class="shop-area ptb-100">
-	<h4 class="text-center mb-2"> Do you have free service? If have, then <a class="text-primary" href="#">chick here</a> </h4>
+	<h4 class="text-center mb-2"> Do you have free service? If have, then <a class="text-primary" href="{{ route('motors.free_booking') }}">chick here</a> </h4>
 		<div class="container">
 
 			<div class="row">

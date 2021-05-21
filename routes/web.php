@@ -7,11 +7,13 @@ use App\Http\Controllers\Frontend\BookingController as FrontBookingController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\FreeServiceController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Frontend\ServiceController as FrontServiceController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Frontend\FreeBookingController;
 use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\UserController as FrontUserController;
 use App\Http\Controllers\Frontend\SiteController;
@@ -45,6 +47,12 @@ Route::prefix('/')->name('motors.')->group(function(){
 
 
     Route::group(['middleware'=> 'auth'],function(){
+
+//free booking
+    Route::get('/free_booking',[FreeBookingController::class,'index'])->name('free_booking');
+    Route::post('/free_booking',[FreeBookingController::class,'doBook'])->name('doBook');
+
+
 
     Route::get('/logout',[FrontUserController::class,'logout'])->name('logout');
     Route::post('/book',[FrontBookingController::class,'book'])->name('book');
@@ -105,6 +113,9 @@ Route::prefix('admin')->name('admin.')->group(function (){
 
 
     });
+    Route::get('/freebooking',[FreeServiceController::class,'index'])->name('freebooking');
+    Route::get('/freebooking/{id}/{status}',[FreeServiceController::class,'updateStatus'])->name('freebooking.status');
+    Route::get('/freebooking/pay/{id}/{pay_status}',[FreeServiceController::class,'payupdateStatus'])->name('freebooking.paystatus');
 
     Route::prefix('/payment')->name('payment.')->group(function(){
         Route::get('/show/{id}',[PaymentController::class,'paymentShow'])->name('show');

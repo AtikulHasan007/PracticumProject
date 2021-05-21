@@ -17,6 +17,14 @@
                   </li>
 
                   <li class="sub-menu">
+                    <a href="{{route('admin.freebooking')}}" >
+                        <i class="fa fa-laptop"></i>
+                        <span  >Free Bookings </span>
+                    </a>
+
+                </li>
+
+                  <li class="sub-menu">
                       <a href="javascript:;" class="{{request()->is('admin/customer/list') ? 'active' : ''}}" >
                           <i class="fa fa-book"></i>
                           <span>Customers</span>

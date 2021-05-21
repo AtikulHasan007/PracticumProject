@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class BookingController extends Controller
 {
     public function index(){
-        $book= Booking::all();
+        $book= Booking::orderBy('id','desc')->get();
 
     $fromDate = null;
     $toDate = null;
@@ -57,7 +57,7 @@ class BookingController extends Controller
         }elseif($status === 'finished'){
             $booking->update(['status' => $status]);
         }else{
-
+            $booking->update(['status' => $status]);
         }
 
         return redirect()->back();

@@ -19,6 +19,7 @@ class User extends Authenticatable
     protected $fillable = [
         'image',
         'name',
+        'bike_id',
         'email',
         'contact',
         'address',
@@ -26,6 +27,9 @@ class User extends Authenticatable
         'password',
         'nid',
     ];
+    public function freeService(){
+        return $this->belongsTo(Bike::class,'bike_id','id');
+    }
 
     /**
      * The attributes that should be hidden for arrays.

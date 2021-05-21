@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('title')
-    Admin-Booking-List
+    Admin-Free Bookings
 @stop
 
 
@@ -59,7 +59,7 @@
                     <table  class="display table table-bordered table-striped" id="dynamic-table">
                         <thead>
                             <tr>
-                                <th>Booking ID</th>
+                                <th> ID</th>
                                 <th>User Name</th>
                                 <th>Bike Model</th>
                                 <th>Service Name</th>
@@ -80,7 +80,7 @@
                                 <td>{{$b->bookingUser->name}}</td>
                                 <td>{{$b->bike_model}}</td>
                                 <td> {{$b->service_name}}  </td>
-                                <td class="center hidden-phone">{{$b->date}}  </td>
+                                <td class="center hidden-phone">{{date("Y-m-d",strtotime($b->date))}}  </td>
                                 <td class="center hidden-phone">{{$b->service_charge}}  </td>
                                 <td class="center hidden-phone">{{$b->parts_charge}}.00 </td>
                                 <td class="center hidden-phone">{{$b->service_charge + $b->parts_charge}} </td>
