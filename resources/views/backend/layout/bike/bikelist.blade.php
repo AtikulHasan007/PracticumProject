@@ -7,7 +7,7 @@ Bike-List
 @section('content')
 
   <div class="row">
-  
+
     <div class="col-10 offset-1">
     <h3 class="text-center mb-3 "> All of our authorized Bikes </h3>
 
@@ -62,19 +62,19 @@ Bike-List
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger btn-sm m-1 ">Delete</button>
-        
+
         </form>
       </td>
-    
+
 
   </tbody>
   @endforeach
 </table>
-    
+
 {{ $bikes->links() }}
     </div>
-  
-   
+
+
 
   </div>
 

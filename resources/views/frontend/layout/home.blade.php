@@ -10,9 +10,9 @@
                         <div class="main-slides-box">
                             <div class="main-slides-content">
                                 <span>Get 30% Off</span>
-                                <h1>Best Quality For Best Price</h1>
+                                <h1>Best Service For Best Performance</h1>
                                 <div class="slides-btn">
-                                    <a href="#" class="default-btn">Shop Now</a>
+                                    <a href="{{ route('motors.service') }}" class="default-btn">Book Now</a>
                                     <a href="#" class="optional-btn">Contact Us</a>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -54,8 +54,8 @@
                             <i class="flaticon-free-delivery"></i>
                         </div>
                         <div class="support-content">
-                            <h3>Free Delivery</h3>
-                            <span>World Wide</span>
+                            <h3>Free Wash</h3>
+                            <span>For All Customer</span>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                     </li>
                 </ul>
                 <div class="row align-items-center">
-                   
+
                     <div class="col-lg-12 col-md-12">
                         <div class="tab_content">
                             <div class="tabs_item">
@@ -225,10 +225,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                   
+
                                 </div>
                             </div>
-                           
+
                         </div>
                     </div>
                 </div>

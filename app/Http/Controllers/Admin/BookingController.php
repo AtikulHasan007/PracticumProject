@@ -64,4 +64,19 @@ class BookingController extends Controller
     }
 
 
+    public function view($id){
+        $book = Booking::find($id);
+        return view('backend.layout.booking.view',compact('book'));
+    }
+
+    public function delete($id){
+        $book = Booking::find($id);
+
+
+        $book->delete();
+        return redirect()->back()->with('success','Booking Data Deleted Successfully');
+
+    }
+
+
 }

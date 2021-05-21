@@ -17,8 +17,9 @@ class UserTableSeeder extends Seeder
 
             //4th
         User::create([
-            'name' => 'Sopon',
+            'name' => 'Sopon Khan',
             'email' => 'sopon@gmail.com',
+            'image' => 'admin.png',
             'password' => bcrypt('1234'),
             'role' => 'admin'
 

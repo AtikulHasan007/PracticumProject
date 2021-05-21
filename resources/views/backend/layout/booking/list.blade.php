@@ -7,20 +7,11 @@
 
 @section('content')
 
-
-
-
 <!-- page start-->
 <div class="row">
     <div class="col-sm-12">
         <section class="card">
-            <header class="card-header">
-                Dynamic Table
-                <span class="tools pull-right">
-                    <a href="javascript:;" class="fa fa-chevron-down"></a>
-                    <a href="javascript:;" class="fa fa-times"></a>
-                </span>
-            </header>
+
             <div class="card-body">
                 @if(session('success'))
                 <div class="alert alert-success text-center">
@@ -116,11 +107,21 @@
                                     </div>
                                 </td>
 
-                                <td class="text-center">
+                                <td class="text-center d-flex">
                                   <a class="btn btn-outline-success" href="{{route('admin.booking.edit',$b->id)}}"><i class="fa fa-edit"></i></a>
-                                  <a class="btn btn-outline-info" href="#"><i class="fa fa-eye"></i></a>
-                                  <a class="btn btn-outline-danger" href="#"> <i class="fas fa-trash"></i></a>
-                                  <a class="btn btn-outline-danger" href="{{route('admin.payment.show',$b->id)}}">  <i class="fas fa-dollar-sign"></i></a>
+                                  <a class="btn btn-outline-info" href="{{route('admin.booking.view',$b->id)}}"><i class="fa fa-eye"></i></a>
+
+                                  <form action="{{ route('admin.booking.delete',$b->id)}}" method="post" >
+                                    @csrf
+                                    @method('DELETE')
+                                    <a type="submit" class="btn btn-outline-danger ">  <i class="fas fa-trash text-danger"></i></a>
+
+                                    </form>
+
+
+
+                                 <!-- <a class="btn btn-outline-danger" href="#"> <i class="fas fa-trash"></i></a> -->
+                                  <a class="btn btn-outline-success" href="{{route('admin.payment.show',$b->id)}}">  <i class="fas fa-dollar-sign text-success"></i></a>
 
 
                                 </td>
@@ -136,12 +137,6 @@
         </section>
     </div>
 </div>
-
-
-
-
-
-
 
 
 @stop

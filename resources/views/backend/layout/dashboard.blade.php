@@ -9,11 +9,11 @@ Admin-Dashboard
                   <div class="col-lg-3 col-sm-6">
                       <section class="card">
                           <div class="symbol terques">
-                              <i class="fa fa-user"></i>
+                            <a href="{{ route('admin.customer.list') }}">  <i class="fas fa-user-tie"></i>  </a>
                           </div>
                           <div class="value">
-                              <h1 class="count">
-                                  0
+                              <h1 class="">
+                                {{ count($user) }}
                               </h1>
                               <p>Total Customers</p>
                           </div>
@@ -21,12 +21,12 @@ Admin-Dashboard
                   </div>
                   <div class="col-lg-3 col-sm-6">
                       <section class="card">
-                          <div class="symbol red">
-                              <i class="fa fa-tags"></i>
+                          <div class="symbol bg-dark">
+                            <a href="{{ route('admin.bike.list') }}"> <i class="fas fa-motorcycle text-white"></i> </a>
                           </div>
                           <div class="value">
-                              <h1 class=" count2">
-                                  0
+                              <h1 class="  ">
+                                {{ count($bike) }}
                               </h1>
                               <p>Authorized Bikes</p>
                           </div>
@@ -35,30 +35,44 @@ Admin-Dashboard
                   <div class="col-lg-3 col-sm-6">
                       <section class="card">
                           <div class="symbol yellow">
-                              <i class="fa fa-shopping-cart"></i>
+                            <a href="{{ route('admin.booking.list') }}">  <i class="fab fa-hive"> </i> </a>
                           </div>
                           <div class="value">
-                              <h1 class=" count3">
-                                  0
+                              <h1 class="  ">
+                                {{ count($booking) }}
                               </h1>
-                              <p>Booking Requests</p>
+                              <p>Total Bookings</p>
                           </div>
                       </section>
                   </div>
                   <div class="col-lg-3 col-sm-6">
                       <section class="card">
                           <div class="symbol blue">
-                              <i class="fa fa-bar-chart-o"></i>
+                            <a href="{{ route('admin.service.list') }}">    <i class="fas fa-tools"></i>    </a>
                           </div>
                           <div class="value">
-                              <h1 class=" count4">
-                                  0
+                              <h1 class="  ">
+                                {{ count($service) }}
                               </h1>
-                              <p> Running Services</p>
+                              <p>  Services</p>
                           </div>
                       </section>
                   </div>
-                  
+
+                  <div class="col-lg-3 col-sm-6">
+                    <section class="card">
+                        <div class="symbol bg-dark">
+                            <a href="{{ route('admin.payment.report') }}">    <i class="fas fa-dollar-sign"></i>  </a>
+                        </div>
+                        <div class="value">
+                            <h1 class="  ">
+                                {{ count($payment) }}
+                            </h1>
+                            <p>Payments</p>
+                        </div>
+                    </section>
+                </div>
+
               </div>
 
 @endsection

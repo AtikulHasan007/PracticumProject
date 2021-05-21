@@ -58,7 +58,7 @@ public function updateProfile(Request $request, $id){
 }
 
 public function bookingRecord(){
-    $bookingRecord = Booking::with('bookingUser')->where('user_id', auth()->user()->id)->get();
+    $bookingRecord = Booking::with('bookingUser')->where('user_id', auth()->user()->id)->orderBy('id','desc')->get();
 
     return view('frontend.layout.profile.bookingRecord',compact('bookingRecord'));
 

@@ -79,7 +79,7 @@ class PaymentController extends Controller
 
         public function report(){
 
-            $payments = Payment::all();
+    $payments = Payment::all();
     $fromDate = null;
     $toDate = null;
 

@@ -23,7 +23,7 @@
                       </a>
                       <ul class="sub">
                           <li class="{{request()->is('admin/customer/list') ? 'active' : ''}}"><a  href="{{route('admin.customer.list')}}">Customers List</a></li>
-                          <li><a  href="#l">Add New Customer</a></li>
+
 
                       </ul>
                   </li>

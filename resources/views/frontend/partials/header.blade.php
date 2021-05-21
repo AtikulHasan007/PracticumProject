@@ -34,11 +34,17 @@
                     </div>
                 </div>
                 <div class="col-lg-5">
+                    <div class="middle-header-logo">
+                       <h4 class="text-center">Mehedi Hasan Mumu</h4>
+                    </div>
+                </div>
+                <div class="col-lg-5">
                     <div class="middle-header-search">
-                        <form class="search-form">
+                        <form action="{{ route('motors.search') }}" method="post" class="search-form">
+                            @csrf
                             <label>
                                 <span class="screen-reader-text">Search for:</span>
-                                <input type="search" class="search-field" placeholder="Search the entire store here">
+                                <input type="search" name="search"  class="search-field" placeholder="Search the entire store here">
                             </label>
                             <button type="submit">
                                 <i class='bx bx-search-alt'></i>
@@ -46,24 +52,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <ul class="middle-header-optional">
-                        <li>
-                            <a href="wishlist.html"><i class="flaticon-heart"><span>0</span></i> Wishlist</a>
-                        </li>
-                        <li>
 
-                        <a href="{{route('motors.loginform')}}" class="user-btn"><i class='flaticon-enter'></i>Login </a>
-
-                    </li>
-                    <li>
-                        <a href="{{route('motors.registrationform')}}" class="user-btn"><i class='flaticon-enter'></i>Register</a>
-
-                    </li>
-
-
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -89,6 +78,11 @@
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a href="{{ route('motors.home')}}" class="nav-link active">
+                                    <img src="{{ asset('frontend/assets/img/logo.png')}}" alt="logo" width="100px" class="img-fluid ">
+                                </a>
+                            </li>
                             <li class="nav-item">
                                 <a href="{{ route('motors.home')}}" class="nav-link active">
                                     Home
@@ -123,7 +117,7 @@
                             <!--user Profile -->
                             <li class="nav-item ">
 								<a href="#" class="nav-link active">
-                                <img width="30px" class="img-fluid rounded-circle" src="{{ asset('frontend/assets/img/products/products-1.jpg')}}" alt="image">
+                                <img width="32px" class="img-fluid rounded-circle" src="{{ asset('uploads/users/'.auth()->user()->image)}}" alt="image">
 									<i class='bx bx-chevron-down'></i>
 								</a>
 								<ul class="dropdown-menu">
@@ -144,9 +138,19 @@
 									</li>
 								</ul>
 							</li>
-                            @endauth
+                           @else
+                            <li class="nav-item ">
+
+                                <a href="{{route('motors.loginform')}}" class="user-btn nav-link "><i class='flaticon-enter'></i>Login </a>
+
+                            </li>
+                            <li class="nav-item ">
+                                <a href="{{route('motors.registrationform')}}" class="user-btn nav-link "><i class='flaticon-enter'></i>Register</a>
+
+                            </li>
 
                         </ul>
+                        @endauth
 
                     </div>
                 </nav>

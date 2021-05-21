@@ -51,6 +51,16 @@
                                     <p>Spare Parts Charge: <span class="text-dark">{{  $item->parts_charge}}</span></p>
                                     <p>Total Charge: <span class="text-dark">{{  $item->service_charge + $item->parts_charge}}</span></p>
 
+                                    <p>Payment Status: <span class="text-dark"> @if($item->paid_amount> 0)
+                                    <span> Paid</span>
+                                    @else
+                                    <span>Unpaid</span>
+
+                                    @endif
+                                </span></p>
+
+
+
                                     </div>
                                     <div class="col-6">
                                         <span class="mx-3">Booking Status</span>

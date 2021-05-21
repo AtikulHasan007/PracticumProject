@@ -37,6 +37,8 @@ Route::prefix('/')->name('motors.')->group(function(){
     Route::post('/login',[FrontUserController::class,'login'])->name('login');
     Route::get('/',[SiteController::class,'home'])->name('home');
     Route::get('/our-service',[FrontServiceController::class,'service'])->name('service');
+    Route::post('/search',[FrontServiceController::class,'search'])->name('search');
+
     Route::get('/about',[SiteController::class,'about'])->name('about');
     Route::get('/booking/{id}',[FrontBookingController::class,'booking'])->name('booking');
 
@@ -89,6 +91,7 @@ Route::prefix('admin')->name('admin.')->group(function (){
     Route::prefix('/customer')->name('customer.')->group(function(){
         Route::get('/list',[CustomerController::class,'index'])->name('list');
 
+
     });
 
 
@@ -97,6 +100,8 @@ Route::prefix('admin')->name('admin.')->group(function (){
         Route::get('/edit/{id}',[BookingController::class,'edit'])->name('edit');
         Route::put('/update/{id}',[BookingController::class,'update'])->name('update');
         Route::get('/{id}/{status}',[BookingController::class,'updateStatus'])->name('status');
+        Route::get('/view/{id}',[BookingController::class,'view'])->name('view');
+        Route::delete('/delete/{id}',[BookingController::class,'delete'])->name('delete');
 
 
     });

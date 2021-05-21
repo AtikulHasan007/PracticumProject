@@ -14,4 +14,19 @@ class ServiceController extends Controller
         $service = Service::all();
         return view('frontend.layout.service',compact('service'));
     }
+    public function search(Request $request){
+        $search= $request->search;
+        if($search){
+            $service= Service::where('service_name','like','%'.$search.'%')->get();
+
+        }else
+        {
+            $service= Service::all();
+
+        }
+        return view('frontend.layout.service',compact('service','search'));
+
+
+    }
+
 }
